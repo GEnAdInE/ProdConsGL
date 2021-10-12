@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProdConsWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="201.416" Width="624.079">
     <Grid>
-        <Button x:Name="Cons" Content="Cons" HorizontalAlignment="Left" Margin="111,180,0,0" VerticalAlignment="Top" Width="75" Click="Cons_Click"/>
-        <Button x:Name="Prod" Content="Prod" HorizontalAlignment="Left" Margin="477,180,0,0" VerticalAlignment="Top" Width="75" Click="Prod_Click"/>
+        <Button x:Name="Cons" Content="Cons" HorizontalAlignment="Left" Margin="379,45,0,0" VerticalAlignment="Top" Width="75" Click="Cons_Click" RenderTransformOrigin="3.073,-3.147"/>
+        <Button x:Name="Prod" Content="Prod" HorizontalAlignment="Left" Margin="505,45,0,0" VerticalAlignment="Top" Width="75" Click="Prod_Click"/>
+        <Button x:Name="Clear" Content="CLEAR" HorizontalAlignment="Left" Margin="139,128,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click"/>
+        <Label Content="To generate a cons or a prod click on one of those 2 button&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="Admin command&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Height="33"/>
+        <Label x:Name="Lbl_Alert1" Visibility="Hidden" Content="ALERT1 is Triggered" FontSize="24" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left" Margin="355,106,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

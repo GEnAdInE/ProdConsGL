@@ -55,16 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ConsWindow.xaml.cs">
+    <Compile Include="View\ConsWindow.xaml.cs">
       <DependentUpon>ConsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProdWindow.xaml.cs">
+    <Compile Include="View\ProdWindow.xaml.cs">
       <DependentUpon>ProdWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Stock.cs" />
-    <Compile Include="StockManager.cs" />
-    <Compile Include="Trace.cs" />
-    <Page Include="ConsWindow.xaml">
+    <Compile Include="Model\Stock.cs" />
+    <Compile Include="Controller\StockManager.cs" />
+    <Compile Include="Model\Trace.cs" />
+    <Page Include="View\ConsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,23 +72,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Alert.cs" />
+    <Compile Include="Model\Alert.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cons.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ProdWindow.xaml">
+    <Page Include="View\ProdWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Prod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -114,5 +112,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

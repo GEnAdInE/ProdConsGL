@@ -15,21 +15,23 @@ using System.Windows.Shapes;
 namespace ProdConsWPF
 {
     /// <summary>
-    /// Logique d'interaction pour ConsWindow.xaml
+    /// Logique d'interaction pour ProdWindow.xaml
     /// </summary>
-    public partial class ConsWindow : Window
+    public partial class ProdWindow : Window
     {
-        public delegate void POPEvent();
-        public event POPEvent NewPOP;
-        public ConsWindow()
+        public delegate void PUSHEvent(int iNValue);
+        public event PUSHEvent NewPUSH;
+        public ProdWindow()
         {
             InitializeComponent();
-            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            NewPOP?.Invoke();
+            string value = txt.Text;
+            int valueconverted = 0;
+            if(int.TryParse(value, out valueconverted))
+                NewPUSH?.Invoke(valueconverted);
         }
     }
 }
