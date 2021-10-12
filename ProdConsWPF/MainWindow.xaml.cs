@@ -52,7 +52,8 @@ namespace ProdConsWPF
         {
             foreach(Window w in openWindow)
             {
-                w.Close();
+                if(w != null)
+                    w.Close();
             }
             base.OnClosing(e);
 
