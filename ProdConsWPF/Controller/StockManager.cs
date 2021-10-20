@@ -9,7 +9,7 @@ namespace ProdConsoTP1
 {
     public class StockManager
     {
-        private static Stock MyStock; //static beceause there is only one Stock to be managed
+        private static Stock MyStock; //static beceause there is only one Stock to be managed but can be changed in the future
         private Trace MyTrace;
         public Alert MyAlert;
 
@@ -79,6 +79,10 @@ namespace ProdConsoTP1
             return MyStock.GetSize();
         }
 
+        /// <summary>
+        /// Convert stock to list
+        /// </summary>
+        /// <returns></returns>
         public List<int> ToList()
         {
             return MyStock.GetAllStock();

@@ -14,6 +14,10 @@ namespace ProdConsoTP1
         public event AlertTriggered OnAlertTriggered;
         public event AlertTriggered OnAlertTriggeredEnd;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="_stockManager">a ref to the stockManager</param>
         public Alert(StockManager _stockManager)
         {
             myStockManagerRef = _stockManager;
@@ -43,7 +47,10 @@ namespace ProdConsoTP1
             }
         }
 
-
+        /// <summary>
+        /// Event to catch poped value
+        /// </summary>
+        /// <param name="iValue"></param>
         private void MyStockManagerRef_ValuePoped(int iValue)
         {
             if (!bAlertOnOff && GetCurrentCount() < iTopAlert)
@@ -57,17 +64,30 @@ namespace ProdConsoTP1
         #endregion
 
         #region Basic Helper Function
+
+        /// <summary>
+        /// Get the avaible stock
+        /// </summary>
+        /// <returns></returns>
         private int GetCurrentCount()
         {
            return myStockManagerRef.GetCurrentCount();           
         }
 
+        /// <summary>
+        /// Get remain SpaceLeft()
+        /// </summary>
+        /// <returns></returns>
         private int GetRemainingSpaceLeft()
         {
             int result = myStockManagerRef.GetStackSize() - GetCurrentCount();
             return result;
         }
 
+        /// <summary>
+        /// Get the number of Identical item
+        /// </summary>
+        /// <returns></returns>
         private int NumberOfIdenticalItem()
         {
             List<int> tmpList = myStockManagerRef.ToList();

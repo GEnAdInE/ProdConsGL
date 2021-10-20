@@ -9,11 +9,9 @@ namespace ProdConsoTP1
 {
     public class Trace
     {
-        /// faire truc virtual 
-        /// 
-
-
+        
         string sPath; 
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -27,6 +25,7 @@ namespace ProdConsoTP1
 
             sPath = _path+"/Log"+ time + ".txt"; //create log file with name containing the runtime of this instance.
         }
+
         /// <summary>
         /// Write trace
         /// </summary>

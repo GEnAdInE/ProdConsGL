@@ -21,11 +21,19 @@ namespace ProdConsWPF
     {
         public delegate void PUSHEvent(int iNValue);
         public event PUSHEvent NewPUSH;
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ProdWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// On push clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
             string value = txt.Text;

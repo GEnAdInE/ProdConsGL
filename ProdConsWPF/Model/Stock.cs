@@ -13,28 +13,39 @@ namespace ProdConsoTP1
         public event StackIssue OnStackEmpty;
         private Stack<int> myStack;
         private int iSize;
-        
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="_size"></param>
         public Stock(int _size)
         {
+            
             myStack = new Stack<int>(_size);
             iSize = _size;
         }
 
+        /// <summary>
+        /// Push
+        /// </summary>
+        /// <param name="iProduct"></param>
         public void Push(int iProduct)
         {
-            try
-            {
+            
+            if(GetCount()<iSize)
                 myStack.Push(iProduct);
-            }
-            catch(Exception)
-            {
-                OnStackFull?.Invoke();
-                //eviter les erreurs en cas de listes pleine : peut etre traiter en alrme si necesaire 
-            }
+            else
+                OnStackFull?.Invoke();//avoid error in case of full list : can be treated as an alarm
+
+          
 
 
         }
 
+        /// <summary>
+        /// Pop
+        /// </summary>
+        /// <returns></returns>
         public int Pop()
         {
             try
@@ -45,11 +56,14 @@ namespace ProdConsoTP1
             catch(Exception)
             {
                 OnStackEmpty?.Invoke();
-                return -1;//erreur liste pleine 
+                return -1;//error on empty list 
             }
                 
         }
 
+        /// <summary>
+        /// Clear stock
+        /// </summary>
         public void Clear()
         {
             myStack.Clear();
@@ -64,7 +78,10 @@ namespace ProdConsoTP1
            return myStack.Peek();
         }
 
-
+        /// <summary>
+        /// Return the stock as a list , can be usefullt for the next version
+        /// </summary>
+        /// <returns></returns>
         public List<int> GetAllStock()
         {
             return myStack.ToList<int>();

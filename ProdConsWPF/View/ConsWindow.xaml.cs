@@ -21,12 +21,20 @@ namespace ProdConsWPF
     {
         public delegate void POPEvent(object sender);
         public event POPEvent NewPOP;
+        /// <summary>
+        /// Constructor 
+        /// </summary>
         public ConsWindow()
         {
             InitializeComponent();
             
         }
 
+        /// <summary>
+        /// On Pop clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewPOP?.Invoke(this);
